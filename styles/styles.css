@@ -1,0 +1,10 @@
+.btn-primary {
+    margin-top: 2em;
+    background-color:  #7e75b6;
+    border: none;
+    display: flex;
+}
+
+.btn-primary:hover {
+    background-color: #7e75b6  !important;
+}
