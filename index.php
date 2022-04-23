@@ -12,10 +12,26 @@ $f3 = Base::instance();
 
 //Create an instance of the Base class
 $f3->route('GET /', function () {
-        //echo "Diner Project";
+      //  echo "Breakfast Project";
 
-        $view = new Template();
-        echo $view->render('views/home.html');
+      $view = new Template();
+      echo $view->render('views/home.html');
+});
+
+// Define  a breakfast route
+$f3->route('GET /breakfast', function () {
+    //  echo "Breakfast Project";
+
+    $view = new Template();
+    echo $view->render('views/breakfast.html');
+});
+
+// Define  a breakfast route
+$f3->route('GET /lunch', function () {
+    //  echo "Breakfast Project";
+
+    $view = new Template();
+    echo $view->render('views/lunch.html');
 });
 
 //Run fat free
