@@ -10,7 +10,7 @@ require_once('vendor/autoload.php');
 //Create an instance of the Base class
 $f3 = Base::instance();
 
-//Create an instance of the Base class
+//Define a default route
 $f3->route('GET /', function () {
       //  echo "Breakfast Project";
 
@@ -23,16 +23,27 @@ $f3->route('GET /breakfast', function () {
     //  echo "Breakfast Project";
 
     $view = new Template();
-    echo $view->render('views/breakfast.html');
+    echo $view->render('views/breakfast-menu.html');
 });
 
-// Define  a breakfast route
+// Define  a lunch route
 $f3->route('GET /lunch', function () {
     //  echo "Breakfast Project";
 
     $view = new Template();
     echo $view->render('views/lunch.html');
 });
+
+
+//Define an orderForm2 route
+$f3->route('GET /order', function () {
+    //echo "Order page";
+
+    $view = new Template();
+    echo $view->render('views/orderForm2.html');
+});
+
+
 
 //Run fat free
 $f3->run();
