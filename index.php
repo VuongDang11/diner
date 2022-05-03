@@ -34,13 +34,28 @@ $f3->route('GET /lunch', function () {
     echo $view->render('views/lunch.html');
 });
 
-
-//Define an orderForm2 route
+//Define an orderForm1 route
 $f3->route('GET /order', function () {
     //echo "Order page";
 
     $view = new Template();
+    echo $view->render('views/orderForm1.html');
+});
+
+//Define an orderForm2 route
+$f3->route('POST /order2', function () {
+    //echo "Order page";
+    var_dump($_POST);
+    $view = new Template();
     echo $view->render('views/orderForm2.html');
+});
+
+//Define an orderSummary route
+$f3->route('POST /summary', function () {
+    //echo "Order page";
+    var_dump($_POST);
+    $view = new Template();
+    echo $view->render('views/orderSummary.html');
 });
 
 
