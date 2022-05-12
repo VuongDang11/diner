@@ -53,7 +53,7 @@ $f3->route('POST /order2', function () {
 //Define an orderSummary route
 $f3->route('POST /summary', function () {
     //echo "Order page";
-    var_dump($_POST);
+    var_dump("$_POST");
     $view = new Template();
     echo $view->render('views/orderSummary.html');
 });

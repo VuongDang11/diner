@@ -1,8 +1,14 @@
 <include href="views/header.html"></include>
 <body>
-    <div class="container">
-        <h1>My Diner</h1>
-        <h2>Order Summary</h2>
-        <h3>Thank you for your order</h3>
-    </div>
+<div class="container">
+    <h1>My Diner</h1>
+    <h2>Order Summary</h2>
+    <h3>Thank you for your Order!</h3>
+
+    <p>Order: {{ @SESSION.food }} for {{ @SESSION.meal }}</p>
+    <p>Condiments: {{ @SESSION.conds }}</p>
+
+    <a href="{{ @BASE }}">Return to Home</a>
+</div>
 </body>
+</html>

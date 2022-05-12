@@ -4,7 +4,7 @@
     <h1>My Diner</h1>
     <h2>Order Part 1</h2>
 
-    <form action="order2" method="post" class="form-horizontal">
+    <form action="#" method="post" class="form-horizontal">
 
         <!-- get food -->
         <div class="form-group">
@@ -12,17 +12,30 @@
             <div class="col-sm-4"><input class="form-control" type="text"
                                          name="food" id="food"></div>
         </div>
-        <br>
 
+        <!-- display error if there is one -->
+        <check if="{{ isset(@errors['food']) }}">
+            <span class="text-danger">{{ @errors['food'] }}</span>
+        </check>
+
+        <br>
+        <br>
         <!-- get meal -->
         <div class="form-group">
             <label class="col-sm-4 control-label">Select a meal</label>
             <div class="col-sm-4">
-                <label><input type="radio" name="meal" value="breakfast"> Breakfast</label><br>
-                <label><input type="radio" name="meal" value="lunch"> Lunch</label><br>
-                <label><input type="radio" name="meal" value="dinner"> Dinner</label><br>
+                <repeat group="{{ @meals }}" value="{{ @meal }}">
+                    <label><input type="radio" name="meal" value="{{ @meal }}">
+                        {{ ucfirst(@meal) }}</label><br>
+                </repeat>
             </div>
         </div>
+
+        <!-- display error if there is one -->
+        <check if="{{ isset(@errors['meal']) }}">
+            <span class="text-danger">{{ @errors['meal'] }}</span>
+        </check>
+
 
         <div class="col-xs-3 ">
             <button class="btn btn-primary" type="submit">Next</button>
